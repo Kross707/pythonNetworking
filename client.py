@@ -13,5 +13,7 @@ while running:
     if message.decode("utf-8") == "quit":
         print("server has exited")
         running = False
-    else:
+    elif message.decode("utf-8") != "":
         print(message.decode("utf-8"))
+        myInput = input()
+        s.send(str.encode(myInput, "utf-8"))
